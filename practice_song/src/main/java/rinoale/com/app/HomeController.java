@@ -41,4 +41,13 @@ public class HomeController {
 		return "static/index.html";
 	}
 	
+	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+	public String index2(Locale locale, Model model) {		
+		return "static/index2.html";
+	}
+	
+	@RequestMapping(value = "/feed", method = RequestMethod.GET)
+	public String feed(Locale locale, Model model) {		
+		return "static/feed.html";
+	}
 }

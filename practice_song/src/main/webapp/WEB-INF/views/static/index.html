@@ -13,10 +13,10 @@
         <div class="large-12 columns">
           <div class="nav-bar right">
            <ul class="button-group">
-             <li><a href="#" class="button">Link 1</a></li>
-             <li><a href="#" class="button">Link 2</a></li>
-             <li><a href="#" class="button">Link 3</a></li>
-             <li><a href="#" class="button">Link 4</a></li>
+             <li><a href="index" class="button" onClick="">Link 1</a></li>
+             <li><a href="index" class="button">Link 2</a></li>
+             <li><a href="index" class="button">Link 3</a></li>
+             <li><a class="button" onClick="load_feed()">Link 4</a></li>
             </ul>
           </div>
           <h1>Blog <small>This is my blog. It's awesome.</small></h1>
@@ -29,7 +29,7 @@
      
        
      
-      <div class="row">
+      <div id="main_body" class="row">
      
          
         <div class="large-9 columns" role="content">
@@ -135,6 +135,10 @@
     <script src="../resources/js/foundation.min.js"></script>
     <script>
       $(document).foundation();
+      
+      function load_feed(){
+    	  document.getElementById("main_body").innerHTML='<object type="text/html" data="feed.html"></object>';
+    	  }
     </script>
   </body>
 </html>
