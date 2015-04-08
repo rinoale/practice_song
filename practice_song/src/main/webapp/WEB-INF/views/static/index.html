@@ -137,7 +137,9 @@
       $(document).foundation();
       
       function load_feed(){
-    	  document.getElementById("main_body").innerHTML='<object type="text/html" data="feed.html"></object>';
+    	  	$.get("feed.html body", function(data) {
+    		     $("#main_body").replaceWith(data);
+    		});
     	  }
     </script>
   </body>
