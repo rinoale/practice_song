@@ -13,9 +13,9 @@
         <div class="large-12 columns">
           <div class="nav-bar right">
            <ul class="button-group">
-             <li><a href="index" class="button" onClick="">Link 1</a></li>
-             <li><a href="index" class="button">Link 2</a></li>
-             <li><a href="index" class="button">Link 3</a></li>
+             <li><a href="/" class="button" onClick="">Link 1</a></li>
+             <li><a href="/" class="button">Link 2</a></li>
+             <li><a href="/" class="button">Link 3</a></li>
              <li><a class="button" onClick="load_feed()">Link 4</a></li>
             </ul>
           </div>
@@ -137,7 +137,7 @@
       $(document).foundation();
       
       function load_feed(){
-    	  	$.get("feed.html body", function(data) {
+    	  	$.get("feed.jsp body", function(data) {
     		     $("#main_body").replaceWith(data);
     		});
     	  }
