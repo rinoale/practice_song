@@ -2,8 +2,7 @@ package com.rinoale.vo;
 
 public class CommentsVo {
 	private int seq;
-	private String content;
-	private String img_path;
+	private String COMMENTS_CONTENT;
 	
 	public int getSeq() {
 		return seq;
@@ -11,16 +10,10 @@ public class CommentsVo {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public String getContent() {
-		return content;
+	public String getCOMMENTS_CONTENT() {
+		return COMMENTS_CONTENT;
 	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getImg_path() {
-		return img_path;
-	}
-	public void setImg_path(String img_path) {
-		this.img_path = img_path;
+	public void setCOMMENTS_CONTENT(String COMMENT_CONTENT) {
+		this.COMMENTS_CONTENT = COMMENT_CONTENT;
 	}
 }

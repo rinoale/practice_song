@@ -2,7 +2,7 @@ package com.rinoale.vo;
 
 public class WritesVo {
 	private int seq;
-	private String content;
+	private String WRITES_CONTENT;
 
 	public int getSeq() {
 		return seq;
@@ -10,10 +10,10 @@ public class WritesVo {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public String getContent() {
-		return content;
+	public String getWRITES_CONTENT() {
+		return WRITES_CONTENT;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setWRITES_CONTENT(String WRITES_CONTENT) {
+		this.WRITES_CONTENT = WRITES_CONTENT;
 	}
 }

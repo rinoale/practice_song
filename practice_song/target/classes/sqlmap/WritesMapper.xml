@@ -4,7 +4,7 @@
 
     <resultMap id="writesMap" type="com.rinoale.vo.WritesVo">
         <id     property="seq"    column="seq" />
-        <result property="content" column="content" />
+        <result property="WRITES_CONTENT" column="WRITES_CONTENT" />
     </resultMap>
 
     <select id="select" resultMap="writesMap">
@@ -16,14 +16,14 @@
     </select>
 
     <insert id="insert">
-         INSERT INTO writes ( content ) VALUES (
-                #{content}
+         INSERT INTO writes ( WRITES_CONTENT ) VALUES (
+                #{WRITES_CONTENT}
          )
     </insert>
 
     <update id="update">
          UPDATE writes SET
-              content = #{content},
+              WRITES_CONTENT = #{WRITES_CONTENT},
          WHERE seq = #{seq} LIMIT 1
     </update>
 

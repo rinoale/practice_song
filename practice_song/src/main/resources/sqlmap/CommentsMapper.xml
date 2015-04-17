@@ -4,8 +4,7 @@
 
     <resultMap id="commentsMap" type="com.rinoale.vo.CommentsVo">
         <id     property="seq"    column="seq" />
-        <result property="content" column="content" />
-        <result property="img_path"       column="img_path" />
+        <result property="COMMENTS_CONTENT" column="COMMENTS_CONTENT" />
     </resultMap>
 
     <select id="select" resultMap="commentsMap">
@@ -17,16 +16,14 @@
     </select>
 
     <insert id="insert">
-         INSERT INTO comments ( content, img_path ) VALUES (
-                #{content}
-              , #{img_path}
+         INSERT INTO comments (COMMENTS_CONTENT) VALUES (
+                #{COMMENTS_CONTENT}
          )
     </insert>
 
     <update id="update">
          UPDATE comments SET
-              content = #{content},
-              img_path = #{img_path}
+              COMMENTS_CONTENT = #{COMMENTS_CONTENT},
          WHERE seq = #{seq} LIMIT 1
     </update>
 

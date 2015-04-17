@@ -58,7 +58,7 @@
           <div class="row">
             <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
             <div class="large-10 columns">
-              <p><strong>Some Person said:</strong> ${writes.get(0).content}</p>
+              <p><strong>Some Person said:</strong> ${writes.get(0).WRITES_CONTENT}</p>
               <ul class="inline-list">
                 <li><a href="">Reply</a></li>
                 <li><a href="">Share</a></li>
@@ -68,7 +68,7 @@
               <h6>2 Comments</h6>
               <div class="row">
                 <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
-                <div class="large-10 columns"><p>${comment.get(0).content}</p></div>
+                <div class="large-10 columns"><p>${comments.get(0).COMMENTS_CONTENT}</p></div>
               </div>
               <div class="row">
                 <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>

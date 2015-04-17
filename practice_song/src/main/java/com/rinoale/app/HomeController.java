@@ -48,12 +48,12 @@ public class HomeController {
 	
 	@RequestMapping(value = "/feed", method = RequestMethod.GET)
 	public String feed(Model model) {
-		List<CommentsVo> comment=commentsDao.getSelect();
+		List<CommentsVo> comments=commentsDao.getSelect();
 		
 		List<WritesVo> writes=writesDao.getSelect();
 		
 		
-		model.addAttribute("comment", comment);
+		model.addAttribute("comments", comments);
 		model.addAttribute("writes", writes);
 		
 		return "static/feed.jsp";
