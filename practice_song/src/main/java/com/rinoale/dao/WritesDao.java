@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rinoale.mapper.WritesMapper;
+import com.rinoale.vo.IndexVo;
 import com.rinoale.vo.WritesVo;
 
 @Service("writesDao")
@@ -13,8 +14,12 @@ public class WritesDao {
     @Autowired
     private WritesMapper writesMapper;
 
-    public List<WritesVo> getSelect() {
-        return this.writesMapper.select();
+    public List<WritesVo> getSelect(IndexVo indexVo) {
+        return this.writesMapper.select(indexVo);
+    }
+    
+    public List<WritesVo> getSelectTest(int from_index) {
+        return this.writesMapper.selectTest(from_index);
     }
 
     public WritesVo getSelectOne(int seq) {

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rinoale.mapper.WritesMapper">
-
+		  
     <resultMap id="writesMap" type="com.rinoale.vo.WritesVo">
-        <id     property="seq"    column="seq" />
+        <id     property="seq"    		column="seq" />
         <result property="WRITES_CONTENT" column="WRITES_CONTENT" />
     </resultMap>
 
-    <select id="select" resultMap="writesMap">
-        SELECT  * FROM writes
+    <select id="select" parameterType="com.rinoale.vo.IndexVo" resultMap="writesMap">
+        SELECT  * FROM writes order by seq desc limit ${fromIndex},${howMany}
     </select>
 
     <select id="selectOne" resultMap="writesMap">
+        SELECT  * FROM writes WHERE seq = #{seq}
+    </select>
+    
+    <select id="selectTest" resultMap="writesMap">
         SELECT  * FROM writes WHERE seq = #{seq}
     </select>
 

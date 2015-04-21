@@ -24,7 +24,7 @@ public class ContentController {
 	@Autowired
 	private WritesDao writesDao;
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -32,6 +32,7 @@ public class ContentController {
 	@RequestMapping(value = "writes/content.do", method = RequestMethod.GET)
 	public String home(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
 		System.out.println(req.getParameter("seq"));
+
 		
 		model.addAttribute("seq", req.getParameter("seq"));
 		

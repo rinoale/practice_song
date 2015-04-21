@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.rinoale.dao.CommentsDao;
 import com.rinoale.dao.WritesDao;
 import com.rinoale.vo.CommentsVo;
+import com.rinoale.vo.IndexVo;
 import com.rinoale.vo.WritesVo;
 
 /**
@@ -49,8 +50,15 @@ public class HomeController {
 	@RequestMapping(value = "/feed", method = RequestMethod.GET)
 	public String feed(Model model) {
 		List<CommentsVo> comments=commentsDao.getSelect();
+		WritesVo writesVo=writesDao.getSelectOne(2);
+		System.out.println(writesVo.getWRITES_CONTENT());
+		IndexVo indexVo=new IndexVo();
+		indexVo.setFromIndex(0);
+		indexVo.setHowMany(5);
+		List<WritesVo> writes=writesDao.getSelect(indexVo);
 		
-		List<WritesVo> writes=writesDao.getSelect();
+		
+		writes=writesDao.getSelectTest(1);
 		
 		
 		model.addAttribute("comments", comments);
