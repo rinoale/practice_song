@@ -141,6 +141,13 @@
 		   <artifactId>spring-jdbc</artifactId>
 		   <version>${org.springframework-version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+			
 	
 		<!-- Test -->
 		<dependency>

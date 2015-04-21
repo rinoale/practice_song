@@ -30,6 +30,22 @@
 		 }
 	}
 	
+	function sendWritesindexGetReplies(seq){
+		$.ajax({
+			url : "writes/content.do",
+			type : "GET",
+			data : {
+				"seq": seq
+			},
+			dataType : "json",
+			success : function(data) {
+				alert(data.seq);				
+			}, error : function (xhr, status, err) {
+				alert("xhr : " + xhr + ", err :" + err);
+			}
+		});
+	}
+	
 	function appendWrites(WRITE_CONTENT){
 		$(".Writes").append("<hr/>"+
 				"<div class='row'>"+
@@ -53,6 +69,34 @@
 	              "</div>"+
 	            "</div>"+
 	          "</div>");
+		num_of_appended++;
+	}
+	
+	function appendWithEffect(WRITE_CONTENT){
+		var newWrite=$("<hr/>"+
+				"<div class='row' style='display:none'>"+
+	            "<div class='large-2 columns small-3'><img src='http://placehold.it/80x80&text=[img]'/></div>"+
+	            "<div class='large-10 columns'>"+
+	              "<p><strong>Some Person said:</strong> "+WRITE_CONTENT+"</p>"+
+	              "<ul class='inline-list'>"+
+	                "<li><a href=''>Reply</a></li>"+
+	                "<li><a href=''>Share</a></li>"+
+	              "</ul>"+
+	     		""+
+	     		""+
+	              "<h6>2 Comments</h6>"+
+	              "<div class='row'>"+
+	                "<div class='large-2 columns small-3'><img src='http://placehold.it/50x50&text=[img]'/></div>"+
+	                "<div class='large-10 columns'><p>${comments.get(0).COMMENTS_CONTENT}</p></div>"+
+	              "</div>"+
+	              "<div class='row'>"+
+	                "<div class='large-2 columns small-3'><img src='http://placehold.it/50x50&text=[img]'/></div>"+
+	                "<div class='large-10 columns'><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>"+
+	              "</div>"+
+	            "</div>"+
+	          "</div>");
+		$(".Writes").append(newWrite);
+		newWrite.show("slow");
 		num_of_appended++;
 	}
 	</script>
@@ -138,17 +182,18 @@
     <script src="../resources/js/vendor/jquery.js"></script>
     <script src="../resources/js/foundation.min.js"></script>
     <script>
-      $(document).foundation();
+		$(document).foundation();
+		
+		loadWritesAtFirst();
       
-      loadWritesAtFirst();
-      
-      $(window).scroll(function() {
-    	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    		   for(var i=num_of_appended;i<num_of_appending+num_of_appended && i<writesList.length;i++){
-    				appendWrites(writesList[i]);
-    			 }
-    	   }
-    	});
+		$(window).scroll(function() {
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				for(var i=num_of_appended;i<num_of_appending+num_of_appended && i<writesList.length;i++){
+					appendWithEffect(writesList[i]);
+				}
+				sendWritesindexGetReplies(1);
+			}
+		});
     </script>
   </body>
 </html>
