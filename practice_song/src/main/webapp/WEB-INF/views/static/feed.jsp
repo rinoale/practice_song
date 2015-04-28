@@ -32,18 +32,45 @@
 	
 	function sendWritesindexGetReplies(seq){
 		$.ajax({
-			url : "writes/content.do",
+			url : "writes/getcontent.do",
 			type : "GET",
 			data : {
 				"seq": seq
 			},
 			dataType : "json",
 			success : function(data) {
-				alert(data.seq);				
+// 				alert(data.seq);				
 			}, error : function (xhr, status, err) {
 				alert("xhr : " + xhr + ", err :" + err);
 			}
 		});
+	}
+	
+	function prependWithEffect(WRITE_CONTENT){
+		var newWrite=$("<hr/>"+
+				"<div class='row' style='display:none'>"+
+	            "<div class='large-2 columns small-3'><img src='http://placehold.it/80x80&text=[img]'/></div>"+
+	            "<div class='large-10 columns'>"+
+	              "<p><strong>Some Person said:</strong> "+WRITE_CONTENT+"</p>"+
+	              "<ul class='inline-list'>"+
+	                "<li><a href=''>Reply</a></li>"+
+	                "<li><a href=''>Share</a></li>"+
+	              "</ul>"+
+	     		""+
+	     		""+
+	              "<h6>2 Comments</h6>"+
+	              "<div class='row'>"+
+	                "<div class='large-2 columns small-3'><img src='http://placehold.it/50x50&text=[img]'/></div>"+
+	                "<div class='large-10 columns'><p>${comments.get(0).COMMENTS_CONTENT}</p></div>"+
+	              "</div>"+
+	              "<div class='row'>"+
+	                "<div class='large-2 columns small-3'><img src='http://placehold.it/50x50&text=[img]'/></div>"+
+	                "<div class='large-10 columns'><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>"+
+	              "</div>"+
+	            "</div>"+
+	          "</div>");
+		$(".Writes").prepend(newWrite);
+		newWrite.show("slow");
 	}
 	
 	function appendWrites(WRITE_CONTENT){
@@ -99,6 +126,23 @@
 		newWrite.show("slow");
 		num_of_appended++;
 	}
+	
+	function Writes(){
+		var write=$("#Writes").val();
+		$.ajax({
+			url : "writes/write.do",
+			type : "GET",
+			data : {
+				"write": write
+			},
+			dataType : "json",
+			success : function(data) {
+				prependWithEffect(data.write);				
+			}, error : function (xhr, status, err) {
+				alert("xhr : " + xhr + ", err :" + err);
+			}
+		});
+	}
 	</script>
   </head>
   <body>
@@ -142,32 +186,15 @@
           </div>
         </div>
         
+        
          
-         
-        <div class="large-6 columns Writes">
-     
-           
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-            <div class="large-10 columns">
-              <p><strong>Some Person said:</strong> ${writes.get(0).WRITES_CONTENT}</p>
-              <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-              </ul>
-     
-     
-              <h6>2 Comments</h6>
-              <div class="row">
-                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
-                <div class="large-10 columns"><p>${comments.get(0).COMMENTS_CONTENT}</p></div>
-              </div>
-              <div class="row">
-                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
-                <div class="large-10 columns"><p>이것은 가비지 태그, DB에서불러온것 아님</p></div>
-              </div>
-            </div>
-          </div>
+        <div class="large-6 columns">
+        	<div class="row" align="right">
+	          <textarea id="Writes" placeholder="" style="height: 150px;resize: none;"></textarea>
+	          <div role="button" tabindex="0" class="button tiny" onClick="Writes()">Write</div>
+	        </div>
+	        <div class="row Writes">
+	        </div>
         </div>
      
          
@@ -188,6 +215,8 @@
       
 		$(window).scroll(function() {
 			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				console.log(num_of_appended);
+				console.log(num_of_appending);
 				for(var i=num_of_appended;i<num_of_appending+num_of_appended && i<writesList.length;i++){
 					appendWithEffect(writesList[i]);
 				}

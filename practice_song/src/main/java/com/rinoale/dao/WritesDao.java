@@ -18,10 +18,6 @@ public class WritesDao {
         return this.writesMapper.select(indexVo);
     }
     
-    public List<WritesVo> getSelectTest(int from_index) {
-        return this.writesMapper.selectTest(from_index);
-    }
-
     public WritesVo getSelectOne(int seq) {
         return this.writesMapper.selectOne(seq);
     }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rinoale.dao.CommentsDao;
 import com.rinoale.dao.WritesDao;
+import com.rinoale.vo.WritesVo;
 
 @Controller
 public class ContentController {
@@ -29,12 +30,28 @@ public class ContentController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "writes/content.do", method = RequestMethod.GET)
-	public String home(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
+	@RequestMapping(value = "writes/getcontent.do", method = RequestMethod.GET)
+	public String getWrites(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
 		System.out.println(req.getParameter("seq"));
 
 		
 		model.addAttribute("seq", req.getParameter("seq"));
+		
+		return "jsonView";
+	}
+	
+	@RequestMapping(value = "writes/write.do", method = RequestMethod.GET)
+	public String putWrites(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
+		System.out.println(req.getParameter("write"));
+		
+		String WRITES_CONTENT=req.getParameter("write");
+				
+		WritesVo writesVo=new WritesVo();
+		writesVo.setWRITES_CONTENT(WRITES_CONTENT);
+		
+		writesDao.insert(writesVo);
+		
+		model.addAttribute("write", WRITES_CONTENT);
 		
 		return "jsonView";
 	}

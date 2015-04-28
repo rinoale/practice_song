@@ -11,8 +11,6 @@ import com.rinoale.vo.WritesVo;
 public interface WritesMapper {
     List<WritesVo> select(IndexVo indexVo);
 
-    List<WritesVo> selectTest(int from_index);
-    
     WritesVo selectOne(int seq);
     void insert(WritesVo writesVo);
     void update(WritesVo writesVo);

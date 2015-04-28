@@ -15,10 +15,6 @@
         SELECT  * FROM writes WHERE seq = #{seq}
     </select>
     
-    <select id="selectTest" resultMap="writesMap">
-        SELECT  * FROM writes WHERE seq = #{seq}
-    </select>
-
     <insert id="insert">
          INSERT INTO writes ( WRITES_CONTENT ) VALUES (
                 #{WRITES_CONTENT}

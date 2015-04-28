@@ -56,9 +56,7 @@ public class HomeController {
 		indexVo.setFromIndex(0);
 		indexVo.setHowMany(5);
 		List<WritesVo> writes=writesDao.getSelect(indexVo);
-		
-		
-		writes=writesDao.getSelectTest(1);
+
 		
 		
 		model.addAttribute("comments", comments);
