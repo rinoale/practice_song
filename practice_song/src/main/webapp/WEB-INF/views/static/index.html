@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="../resources/css/foundation.css" />
+    <link rel="stylesheet" href="../resources/css/rinoale.css" />
     <script src="../resources/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="../resources/js/index.js"></script>
   </head>
   <body>
     
-    <div class="row">
+    <div class="row" id="header">
         <div class="large-12 columns">
           <div class="nav-bar right">
            <ul class="button-group">
@@ -30,7 +32,6 @@
        
      
       <div id="main_body" class="row">
-     
          
         <div class="large-9 columns" role="content">
      
@@ -104,7 +105,7 @@
      
         </aside>
      
-         
+
       </div>
      
        
@@ -137,6 +138,7 @@
       $(document).foundation();
       
       function load_feed(){
+    	  refreshFeed();
     	  	$.get("feed.jsp body", function(data) {
     		     $("#main_body").replaceWith(data);
     		});

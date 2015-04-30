@@ -1,0 +1,21 @@
+footer {
+
+}
+
+#header {
+	position: fixed;
+	top : 0;
+	left : 50%;
+	margin-left: -500px;
+	background: url("../img/white-background.png") no-repeat top center fixed;
+    background-size: 100% 150px;
+    z-index: 9999;
+}
+
+#main_body {
+	margin-top: 100px;
+}
+
+#sub_header {
+	margin-top: 100px;
+}

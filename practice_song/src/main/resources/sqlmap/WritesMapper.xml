@@ -8,7 +8,18 @@
     </resultMap>
 
     <select id="select" parameterType="com.rinoale.vo.IndexVo" resultMap="writesMap">
-        SELECT  * FROM writes order by seq desc limit ${fromIndex},${howMany}
+        SELECT  
+        	* 
+        FROM 
+        	writes 
+       	<if test="seq!=0">
+       	WHERE
+       		<![CDATA[ seq<${seq} ]]>
+       	</if>
+        order by 
+        	seq desc 
+        limit 
+        	${fromIndex},${howMany}
     </select>
 
     <select id="selectOne" resultMap="writesMap">

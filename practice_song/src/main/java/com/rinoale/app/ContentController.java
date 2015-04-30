@@ -1,5 +1,6 @@
 package com.rinoale.app;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rinoale.dao.CommentsDao;
 import com.rinoale.dao.WritesDao;
+import com.rinoale.vo.CommentsVo;
+import com.rinoale.vo.IndexVo;
 import com.rinoale.vo.WritesVo;
 
 @Controller
@@ -32,10 +35,18 @@ public class ContentController {
 	 */
 	@RequestMapping(value = "writes/getcontent.do", method = RequestMethod.GET)
 	public String getWrites(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
-		System.out.println(req.getParameter("seq"));
+		int last_index=Integer.parseInt(req.getParameter("index_num"));
+		
+		
+		IndexVo indexVo=new IndexVo();
+		indexVo.setFromIndex(0);
+		indexVo.setHowMany(3);
+		indexVo.setSeq(last_index);
+		List<WritesVo> writes=writesDao.getSelect(indexVo);
 
 		
-		model.addAttribute("seq", req.getParameter("seq"));
+		model.addAttribute("writes", writes);
+
 		
 		return "jsonView";
 	}

@@ -50,14 +50,12 @@ public class HomeController {
 	@RequestMapping(value = "/feed", method = RequestMethod.GET)
 	public String feed(Model model) {
 		List<CommentsVo> comments=commentsDao.getSelect();
-		WritesVo writesVo=writesDao.getSelectOne(2);
-		System.out.println(writesVo.getWRITES_CONTENT());
+
 		IndexVo indexVo=new IndexVo();
 		indexVo.setFromIndex(0);
-		indexVo.setHowMany(5);
+		indexVo.setHowMany(3);
 		List<WritesVo> writes=writesDao.getSelect(indexVo);
 
-		
 		
 		model.addAttribute("comments", comments);
 		model.addAttribute("writes", writes);

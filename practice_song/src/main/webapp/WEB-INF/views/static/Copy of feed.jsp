@@ -149,6 +149,7 @@
 	</script>
   </head>
   <body>
+    
       <div class="row" id="sub_header">
         <div class="large-12 columns">
           <div class="panel">
@@ -207,6 +208,7 @@
         </aside>
      
       </div>
+    
     <script src="../resources/js/vendor/jquery.js"></script>
     <script src="../resources/js/foundation.min.js"></script>
     <script>
