@@ -1,0 +1,64 @@
+package com.systran.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.systran.mapper.TB_PATTERN_DATA_Mapper;
+import com.systran.vo.DBSearchVo;
+import com.systran.vo.IndexVo;
+import com.systran.vo.TB_PATTERN_DATA_Vo;
+
+@Service("tb_pattern_data_Dao")
+public class TB_PATTERN_DATA_Dao {
+	@Autowired
+	private TB_PATTERN_DATA_Mapper tb_pattern_data_Mapper;
+	
+	public List<TB_PATTERN_DATA_Vo> getSelect(IndexVo indexVo) {
+        return this.tb_pattern_data_Mapper.select(indexVo);
+    }
+
+    public TB_PATTERN_DATA_Vo getSelectOne(int seq) {
+        return this.tb_pattern_data_Mapper.selectOne(seq);
+    }
+
+    public void insert(TB_PATTERN_DATA_Vo tb_pattern_data_Vo) {
+         this.tb_pattern_data_Mapper.insert(tb_pattern_data_Vo);
+    }
+
+    public void update(TB_PATTERN_DATA_Vo tb_pattern_data_Vo) {
+         this.tb_pattern_data_Mapper.update(tb_pattern_data_Vo);
+    }
+
+    public void delete(List<Integer> seq_list) {
+         this.tb_pattern_data_Mapper.delete(seq_list);
+    }
+    
+    public int getTotalCount()
+    {
+    	return this.tb_pattern_data_Mapper.totalCount();
+    }
+    
+    public List<TB_PATTERN_DATA_Vo> getSearch(DBSearchVo dbSearchVo)
+    {
+    	return this.tb_pattern_data_Mapper.search(dbSearchVo);
+    }
+    
+    @SuppressWarnings("rawtypes")
+	public HashMap getCheckDuplication(TB_PATTERN_DATA_Vo tb_pattern_data_Vo)
+    {
+    	return this.tb_pattern_data_Mapper.checkDuplication(tb_pattern_data_Vo);
+    }
+    
+    public int getSearchCount(DBSearchVo dbSearchVo)
+    {
+    	return this.tb_pattern_data_Mapper.searchCount(dbSearchVo);
+    }
+    
+    public void deleteAll()
+    {
+    	this.tb_pattern_data_Mapper.deleteAll();
+    }
+}

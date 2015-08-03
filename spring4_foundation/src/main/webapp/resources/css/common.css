@@ -1,0 +1,285 @@
+#filelistview {
+	align: right;
+}
+
+a#file {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 90px;
+    overflow: hidden;
+    text-align: center;
+    background-color: green;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+input#fileupload {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
+    font-size: 40px;
+}
+#checkbox {
+	text-align: center;
+}
+
+.size-12 { font-size: 12px; }
+      
+.size-14 { font-size: 14px; }
+
+.size-16 { font-size: 16px; }
+
+.size-18 { font-size: 18px; }
+
+.size-21 { font-size: 21px; }
+
+.size-24 { font-size: 24px; }
+
+.size-36 { font-size: 36px; }
+
+.size-48 { font-size: 48px; }
+
+.size-60 { font-size: 60px; }
+
+.size-72 { font-size: 72px; }
+
+#file_path {
+
+}
+
+#edit_icon {
+	color: #C0C0C0;
+}
+
+#delete_icon {
+	color: #C0C0C0;
+}
+
+#org_pttrn_text {
+	border: none;
+	resize: none;
+}
+
+#edit_button {
+	width: 50px;
+	height: 70px;
+}
+#edit_text {
+	padding-left: 0px;
+	padding-right: 0px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	font-size: 13px;
+}
+#cancel_text {
+	padding-left: 0px;
+	padding-right: 0px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	font-size: 13px;
+}
+
+#edit_menu {
+	padding: 0px;
+}
+
+#edit_sub_menu {
+	text-align:center;
+}
+
+.title_text {
+	text-align: center;
+}
+
+#vertical-bar {
+	position: fixed;
+	top: 25%;
+}
+
+.highlight { 
+	background-color: yellow 
+}
+
+#edit_menu div {
+	 width:100px;
+	 height:70px;
+	 background-color: transparent;
+}
+
+#edit_menu div a{
+	text-align: center;
+	vertical-align:middle;
+	width:50px;
+	height:70px;
+}
+
+table textarea {
+	margin: 0px;
+}
+
+#select_list {
+	margin-top:6px;
+}
+#select_list_size {
+	margin: 0;
+}
+
+#ShowtotalCount {
+	width:108px;
+	padding-top:8px;
+	margin-bottom:3px;
+}
+
+#days-off-count {
+	padding: 0;
+	height: 30px;
+	margin: 0;
+}
+
+#table_option {
+	height: 30px;
+}
+
+table .highlighted td{
+  background-color: #d0b4b3;
+}
+
+.highlight { background: yellow; }
+
+#yes {
+	padding-left:60%;
+}
+
+#no {
+	padding-left:5%;
+}
+
+#confirm {
+	padding-left:80%;
+}
+
+#modalTitle {
+	text-align: center;
+}
+#loadingImg {
+	margin-left:850%;
+}
+
+#insert_div {
+	width:100px;
+	height:40px;
+}
+
+
+#text_warning p {
+	margin: 0;
+}
+
+
+#org_cont {
+	height:150px;
+	resize: none;
+}
+
+#trnst_cont {
+	height:150px;
+	editable: false;
+	resize: none;
+}
+
+#loadingImg_Trans {
+	margin-left: 50%;
+}
+
+#patternReturnList {
+	padding: 15px;
+}
+
+#dragandrophandler
+{
+	border:2px dotted #0B85A1;
+	width:400px;
+	color:#92AAB0;
+	text-align:left;vertical-align:middle;
+	padding:10px 10px 10 10px;
+	margin-bottom:10px;
+	font-size:200%;
+}
+.progressBar {
+    width: 200px;
+    height: 22px;
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    overflow: hidden;
+    display:inline-block;
+    margin:0px 10px 5px 5px;
+    vertical-align:top;
+}
+ 
+.progressBar div {
+    height: 100%;
+    color: #fff;
+    text-align: right;
+    line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: #0ba1b5; border-radius: 3px; 
+}
+.statusbar
+{
+    border-top:1px solid #A9CCD1;
+    min-height:25px;
+    width:700px;
+    padding:10px 10px 0px 10px;
+    vertical-align:top;
+}
+.statusbar:nth-child(odd){
+    background:#EBEFF0;
+}
+.filename
+{
+display:inline-block;
+vertical-align:top;
+width:250px;
+}
+.filesize
+{
+display:inline-block;
+vertical-align:top;
+color:#30693D;
+width:100px;
+margin-left:10px;
+margin-right:5px;
+}
+.abort{
+    background-color:#A8352F;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;display:inline-block;
+    color:#fff;
+    font-family:arial;font-size:13px;font-weight:normal;
+    padding:4px 15px;
+    cursor:pointer;
+    vertical-align:top
+}
+.process{
+    background-color:#A8352F;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;display:inline-block;
+    color:#fff;
+    font-family:arial;font-size:13px;font-weight:normal;
+    padding:4px 15px;
+    cursor:pointer;
+    vertical-align:top
+}
+
+#downloadicon{
+	width: 40px;
+	height: 50px;
+}

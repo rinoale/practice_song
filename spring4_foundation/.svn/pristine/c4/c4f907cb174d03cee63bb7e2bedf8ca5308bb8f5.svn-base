@@ -1,0 +1,62 @@
+package com.systran.hello;
+
+import java.util.Locale;
+
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.messaging.core.MessageSendingOperations;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.systran.customthread.vo.WrappingThread;
+
+@Controller
+public class GreetingController {
+	
+	private SimpMessagingTemplate template;
+	
+	@Autowired
+    public GreetingController(SimpMessagingTemplate template) {
+        this.template = template;
+    }
+	
+	@Autowired
+	@Qualifier("brokerMessagingTemplate")
+	private MessageSendingOperations brokerMessagingTemplate;
+	
+	@Inject
+	WrappingThread thread;
+	
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public Greeting greeting(HelloMessage message) throws Exception {
+//        Thread.sleep(3000); // simulated delay
+        
+		System.out.println(thread.getState());
+		if(thread.getState()==Thread.State.NEW)
+		{
+			thread.start();
+			
+			String text = "{\"content\":\"Thread started\"}";
+	        this.template.convertAndSend("/topic/greetings", text);
+	        
+		}
+
+        return new Greeting("Hello, " + message.getName() + "!");
+    }
+    
+    @RequestMapping(value = "/static/index", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+
+		
+		return "static/index.jsp";
+	}
+
+}

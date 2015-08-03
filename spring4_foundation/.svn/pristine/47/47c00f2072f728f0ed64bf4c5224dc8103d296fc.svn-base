@@ -1,0 +1,24 @@
+package com.systran.customthread.vo;
+
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+
+public class WrappingThread extends Thread{
+	private CustomizedThread rable;
+
+	public WrappingThread(CustomizedThread rable) {
+		this.rable = rable;
+	}
+	
+	public void pause() {
+		rable.pause();
+	}
+	
+	public void revive() {
+		rable.resume();
+	}
+	
+	@Override
+	public void run() {
+		rable.run();
+	}	
+};
