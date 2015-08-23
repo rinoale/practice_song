@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="../resources/css/foundation.css" />
+    <script src="../resources/js/vendor/modernizr.js"></script>
+    <script src="../resources/js/pageJS/index3.js"></script>
+    <script type="text/javascript">
+    	
+    </script>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Welcome to Foundation</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-8 medium-8 columns">
+ 
+        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
+        <form>
+				  <div class="row">
+				    <div class="large-4 medium-4 columns">
+				      <label>공격력</label>
+				      <input id="attackDamage" type="text" value="1000"/>
+				    </div>
+				    <div class="large-4 medium-4 columns">
+				      <label>치명타 확률</label>
+				      <input id="criticalChance" type="text" value="35"/>
+				    </div>
+				    <div class="large-4 medium-4 columns">
+				      <div class="row collapse">
+				        <label>Input Label</label>
+				        <div class="small-9 columns">
+				          <input type="text"/>
+				        </div>
+				        <div class="small-3 columns">
+				          <span class="postfix">.com</span>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row">
+				  	<div class="large-2 columns">
+				      <label>옵션</label>
+				      <select id="option1">
+				        <option value="penet">관통력</option>
+				        <option value="crit">치명타 피해</option>
+				        <option value="ad">공격력</option>
+				        <option value="cc">치명타 확률</option>
+				      </select>
+				    </div>
+				    <div class="large-2 medium-2 columns">
+				      <label>무기 옵션 1</label>
+				      <input id="value1" type="text"/>
+				    </div>
+				    <div class="large-2 columns">
+				      <label>옵션</label>
+				      <select id="option2">
+				        <option value="penet">관통력</option>
+				        <option value="crit">치명타 피해</option>
+				        <option value="ad">공격력</option>
+				        <option value="cc">치명타 확률</option>
+				      </select>
+				    </div>
+				    <div class="large-2 medium-2 columns">
+				      <label>무기 옵션 2</label>
+				      <input id="value2" type="text"/>
+				    </div>
+				    <div class="large-2 columns">
+				      <label>옵션</label>
+				      <select id="option3">
+				        <option value="penet">관통력</option>
+				        <option value="crit">치명타 피해</option>
+				        <option value="ad">공격력</option>
+				        <option value="cc">치명타 확률</option>
+				      </select>
+				    </div>
+				    <div class="large-2 medium-2 columns">
+				      <label>무기 옵션 3</label>
+				      <input id="value3" type="text"/>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="large-12 columns">
+				      <label>Select Box</label>
+				      <select>
+				        <option value="husker">Husker</option>
+				        <option value="starbuck">Starbuck</option>
+				        <option value="hotdog">Hot Dog</option>
+				        <option value="apollo">Apollo</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="large-6 medium-6 columns">
+				      <label>Choose Your Favorite</label>
+				      <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+				      <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+				    </div>
+				    <div class="large-6 medium-6 columns">
+				      <label>Check these out</label>
+				      <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+				      <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="large-12 columns">
+				      <label>Textarea Label</label>
+				      <textarea id="result"></textarea>
+				    </div>
+				  </div>
+				</form>
+      </div>     
+
+      <div class="large-4 medium-4 columns">
+			  <h5>Try one of these buttons:</h5>
+			  <p><a class="small button" onClick="calculateEfficiency()">Simple Button</a><br/>
+        <a href="#" class="small radius button">Radius Button</a><br/>
+        <a href="#" class="small round button">Round Button</a><br/>            
+        <a href="#" class="medium success button">Success Btn</a><br/>
+        <a href="#" class="medium alert button">Alert Btn</a><br/>
+        <a href="#" class="medium secondary button">Secondary Btn</a></p>           
+				<div class="panel">
+        	<h5>So many components, girl!</h5>
+        	<p>A whole kitchen sink of goodies comes with Foundation. Checkout the docs to see them all, along with details on making them your own.</p>
+        	<a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
+        </div>
+      </div>
+    </div>
+    
+    <script src="../resources/js/vendor/jquery.js"></script>
+    <script src="../resources/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
