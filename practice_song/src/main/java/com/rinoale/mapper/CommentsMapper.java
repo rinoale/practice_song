@@ -8,7 +8,7 @@ import com.rinoale.vo.CommentsVo;
 
 @Repository(value = "commentsMapper")
 public interface CommentsMapper {
-    List<CommentsVo> select();
+    List<CommentsVo> select(CommentsVo commentsVo);
 
     CommentsVo selectOne(int seq);
     void insert(CommentsVo commentsVo);

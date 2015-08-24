@@ -5,10 +5,14 @@
     <resultMap id="commentsMap" type="com.rinoale.vo.CommentsVo">
         <id     property="seq"    column="seq" />
         <result property="COMMENTS_CONTENT" column="COMMENTS_CONTENT" />
+        <result property="parentSeq" column="PARENT_SEQ" />
     </resultMap>
 
-    <select id="select" resultMap="commentsMap">
+    <select id="select" parameterType="com.rinoale.vo.CommentsVo" resultMap="commentsMap">
         SELECT  * FROM comments
+        WHERE
+        	PARENT_SEQ = #{parentSeq}
+        	
     </select>
 
     <select id="selectOne" resultMap="commentsMap">

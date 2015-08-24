@@ -3,7 +3,14 @@ package com.rinoale.vo;
 public class CommentsVo {
 	private int seq;
 	private String COMMENTS_CONTENT;
+	private int parentSeq;
 	
+	public int getParentSeq() {
+		return parentSeq;
+	}
+	public void setParentSeq(int parent_seq) {
+		this.parentSeq = parent_seq;
+	}
 	public int getSeq() {
 		return seq;
 	}

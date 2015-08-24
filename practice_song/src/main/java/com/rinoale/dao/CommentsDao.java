@@ -13,8 +13,8 @@ public class CommentsDao {
     @Autowired
     private CommentsMapper commentsMapper;
 
-    public List<CommentsVo> getSelect() {
-        return this.commentsMapper.select();
+    public List<CommentsVo> getSelect(CommentsVo commentsVo) {
+        return this.commentsMapper.select(commentsVo);
     }
 
     public CommentsVo getSelectOne(int seq) {

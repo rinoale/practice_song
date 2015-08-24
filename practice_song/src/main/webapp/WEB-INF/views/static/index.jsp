@@ -1,18 +1,37 @@
 <!doctype html>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-	<head>
-	    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/pageJS/main.js"></script>
-      	<script src="./resources/js/vendor/fastclick.js"></script>
-		<script>
-// 		  $(document).foundation();
-		</script>
-		<title>rinoale's cabin</title>
-	</head>
-<body>   
-      <div class="row body_in_mesh">
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="../resources/css/foundation.css" />
+    <link rel="stylesheet" href="../resources/css/rinoale.css" />
+    <script src="../resources/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="../resources/js/index.js"></script>
+  </head>
+  <body>
+    
+    <div class="row" id="header">
+        <div class="large-12 columns">
+          <div class="nav-bar right">
+           <ul class="button-group">
+             <li><a href="/" class="button" onClick="">Link 1</a></li>
+             <li><a href="/" class="button">Link 2</a></li>
+             <li><a href="/" class="button">Link 3</a></li>
+             <li><a class="button" onClick="load_feed()">Link 4</a></li>
+            </ul>
+          </div>
+          <h1>Blog <small>This is my blog. It's awesome.</small></h1>
+          <hr/>
+        </div>
+      </div>
      
+       
+     
+     
+       
+     
+      <div id="main_body" class="row">
          
         <div class="large-9 columns" role="content">
      
@@ -86,7 +105,44 @@
      
         </aside>
      
-         
+
       </div>
-</body>
+     
+       
+     
+     
+       
+     
+      <footer class="row">
+        <div class="large-12 columns">
+          <hr/>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>© Copyright no one at all. Go to town.</p>
+            </div>
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+    <script src="../resources/js/vendor/jquery.js"></script>
+    <script src="../resources/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      
+      function load_feed(){
+    	  refreshFeed();
+    	  	$.get("feed.jsp body", function(data) {
+    		     $("#main_body").replaceWith(data);
+    		});
+    	  }
+    </script>
+  </body>
 </html>

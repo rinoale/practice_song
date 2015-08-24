@@ -3,6 +3,7 @@ package com.rinoale.vo;
 public class WritesVo {
 	private int seq;
 	private String WRITES_CONTENT;
+	private int numOfComment;
 
 	public int getSeq() {
 		return seq;

@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="../resources/css/foundation.css" />
     <script src="../resources/js/vendor/modernizr.js"></script>
@@ -149,7 +147,7 @@
 	</script>
   </head>
   <body>
-      <div class="row" id="sub_header">
+      <div class="row body_in_mesh" id="sub_header">
         <div class="large-12 columns">
           <div class="panel">
             <h1 onClick="pageClear()">Feed Template</h1>

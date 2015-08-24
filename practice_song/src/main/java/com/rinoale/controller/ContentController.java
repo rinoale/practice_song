@@ -66,4 +66,24 @@ public class ContentController {
 		
 		return "jsonView";
 	}
+	
+	@RequestMapping(value = "writes/getCommentList.do", method = RequestMethod.GET)
+	public String getCommentsWithParentSeq(Locale locale,HttpServletRequest req, HttpServletResponse res, Model model) {
+		
+		int parent_seq=Integer.parseInt(req.getParameter("parentSeq"));
+		
+		
+		CommentsVo commentsVo=new CommentsVo();
+		
+		commentsVo.setParentSeq(parent_seq);
+		
+		List<CommentsVo> resultList=commentsDao.getSelect(commentsVo);
+
+		
+		model.addAttribute("resultList", resultList);
+		model.addAttribute("parentSeq", parent_seq);
+
+		
+		return "jsonView";
+	}
 }
